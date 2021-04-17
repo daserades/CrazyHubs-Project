@@ -5,8 +5,8 @@ using UnityEngine;
 public class GroundMover : MonoBehaviour
 {
     Rigidbody body;
-    public float speed;
-    public bool doMove;
+    [SerializeField] private float speed;
+    [SerializeField] private bool doMove;
     void Start()
     {
         body = GetComponent<Rigidbody>();

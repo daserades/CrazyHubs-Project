@@ -153,8 +153,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.5, z: 2}
-  m_Center: {x: 0.3, y: -0.25, z: -0.5}
+  m_Size: {x: 0.4, y: 3, z: 2}
+  m_Center: {x: 0.3, y: 1, z: -0.5}
 --- !u!23 &91028292
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -357,8 +357,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.5, z: 2}
-  m_Center: {x: 0.3, y: -0.25, z: -0.5}
+  m_Size: {x: 0.4, y: 3, z: 2}
+  m_Center: {x: 0.3, y: 1, z: -0.5}
 --- !u!23 &193283885
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -452,8 +452,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.5, z: 2}
-  m_Center: {x: 0.3, y: -0.25, z: -0.5}
+  m_Size: {x: 0.4, y: 3, z: 2}
+  m_Center: {x: 0.3, y: 1, z: -0.5}
 --- !u!23 &627129678
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -749,8 +749,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.5, z: 2}
-  m_Center: {x: 0.3, y: -0.25, z: -0.5}
+  m_Size: {x: 0.4, y: 3, z: 2}
+  m_Center: {x: 0.3, y: 1, z: -0.5}
 --- !u!23 &830894207
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1036,8 +1036,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.5, z: 2}
-  m_Center: {x: 0.3, y: -0.25, z: -0.5}
+  m_Size: {x: 0.4, y: 3, z: 2}
+  m_Center: {x: 0.3, y: 1, z: -0.5}
 --- !u!23 &1035513884
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1131,8 +1131,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.5, z: 2}
-  m_Center: {x: 0.3, y: -0.25, z: -0.5}
+  m_Size: {x: 0.4, y: 3, z: 2}
+  m_Center: {x: 0.3, y: 1, z: -0.5}
 --- !u!23 &1109421387
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1746,7 +1746,7 @@ GameObject:
   - component: {fileID: 1693655194}
   - component: {fileID: 1693655193}
   - component: {fileID: 1693655197}
-  - component: {fileID: 1693655198}
+  - component: {fileID: 1693655199}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1846,7 +1846,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1693655198
+--- !u!114 &1693655199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1855,15 +1855,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1693655192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 779594e107a09c0408fbb34b5391546b, type: 3}
+  m_Script: {fileID: 11500000, guid: ed57f98d99b202d42b9432edf39386e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ease: 35
-  xMoveAmount: 1
-  moveDuration: 0.5
+  ease: 1
   jumpPower: 2
   numJumps: 1
-  jumpDuration: 1
+  jumpDuration: 0.5
 --- !u!1 &2041987194
 GameObject:
   m_ObjectHideFlags: 0
