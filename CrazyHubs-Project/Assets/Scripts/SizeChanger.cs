@@ -5,53 +5,68 @@ using UnityEngine;
 public class SizeChanger : MonoBehaviour
 {
     public float loseWeightTime = 0;
-    public float loseWeightStep = 0;
-    public float LoseWeightStopScaleMag = 0;
+
+    public int meshArrayOrder = 5;
+    public int meshArrayDecreaseSize = 0;
 
     public bool canLoseWeight = true;
 
-    Transform catScaleChangeObject = default;
+    int meeloCatMeshesInOrderLenght = 0;
+    
+    [SerializeField]
+    Mesh[] meeloCatMeshesInOrder;
 
-    Vector3 scaleVector = Vector3.zero;
+    [SerializeField]
+    SkinnedMeshRenderer currentSkinnedMeshRenderer = default;
 
-    private void Awake()
+    public int meshArrayOrderIncrease(int increaseSize)
     {
-        catScaleChangeObject = gameObject.transform;
+        if (meshArrayOrder + increaseSize < meeloCatMeshesInOrderLenght)
+        {
+            meshArrayOrder += increaseSize;
+        }
+        else
+        {
+            meshArrayOrder = meeloCatMeshesInOrderLenght-1;
+        }
+        return meshArrayOrder;
+    }
 
-        scaleVector = catScaleChangeObject.transform.localScale;
+    public int meshArrayOrderDecrease(int decreaseSize)
+    {
+        if (meshArrayOrder - decreaseSize >= 0)
+        {
+            meshArrayOrder -= decreaseSize;
+        }
+        return meshArrayOrder;
     }
 
     void Start()
     {
-        StartCoroutine(ChangeSize());
+        meeloCatMeshesInOrderLenght = meeloCatMeshesInOrder.Length;
+
+        StartCoroutine(ChangeMesh());
     }
 
-    void LoseScaleChange()
+    public void MeshChange()
     {
-        if (catScaleChangeObject.localScale.magnitude >= LoseWeightStopScaleMag )
-        {
-            catScaleChangeObject.localScale -= scaleVector * loseWeightStep;
-        }
-        else
-        {
-            StopSizeChanger();
-            print("game over");
-        }
+        currentSkinnedMeshRenderer.sharedMesh = meeloCatMeshesInOrder[meshArrayOrder];
     }
 
-    void StopSizeChanger()
+    void StopMeshChanger()
     {
         StopAllCoroutines();
     }
 
-    IEnumerator ChangeSize()
+    IEnumerator ChangeMesh()
     {
         while (true)
         {
             if (canLoseWeight)
             {
                 yield return new WaitForSeconds(loseWeightTime);
-                LoseScaleChange();
+                MeshChange();
+                meshArrayOrderDecrease(meshArrayDecreaseSize);
             }
             else
             {

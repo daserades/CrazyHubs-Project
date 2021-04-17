@@ -9,25 +9,19 @@ public class FoodGainScale : MonoBehaviour
     [SerializeField]
     string catTag = default;
     [SerializeField]
-    float GainWeightAmounth = 0;
-
-    Vector3 GainWeightScale = Vector3.zero;
-
-    private void Awake()
-    {
-        GainWeightScale = Vector3.one*GainWeightAmounth;
-    }
+    int GainWeightAmounthMeshArraySize = 0;
 
     private void OnTriggerEnter(Collider Touched)
     {
         if (Touched.CompareTag(catTag))
         {
-            GainScaleWitgFood(Touched.gameObject.transform);
+            GainScaleWitgFood(Touched.GetComponent<SizeChanger>());
         }
     }
 
-    public void GainScaleWitgFood(Transform cat)
+    public void GainScaleWitgFood(SizeChanger sizeChanger)
     {
-        cat.localScale += GainWeightScale;
+        sizeChanger.meshArrayOrderIncrease(GainWeightAmounthMeshArraySize);
+        sizeChanger.MeshChange();
     }
 }
