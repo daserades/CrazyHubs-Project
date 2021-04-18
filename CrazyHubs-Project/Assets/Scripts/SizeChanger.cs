@@ -12,12 +12,14 @@ public class SizeChanger : MonoBehaviour
     public bool canLoseWeight = true;
 
     int meeloCatMeshesInOrderLenght = 0;
-    
     [SerializeField]
-    Mesh[] meeloCatMeshesInOrder;
+    List<Mesh> meeloCatMeshesInOrder = new List<Mesh>();
 
     [SerializeField]
     SkinnedMeshRenderer currentSkinnedMeshRenderer = default;
+
+    [SerializeField]
+    GameObject[] Cats;
 
     public int meshArrayOrderIncrease(int increaseSize)
     {
@@ -43,7 +45,16 @@ public class SizeChanger : MonoBehaviour
 
     void Start()
     {
-        meeloCatMeshesInOrderLenght = meeloCatMeshesInOrder.Length;
+        for (int i = 0; i < Cats.Length; i++)
+        {
+            if (Cats[i].GetComponentInChildren<SkinnedMeshRenderer>() != null)
+            {
+                meeloCatMeshesInOrder.Add(Cats[i].GetComponentInChildren<SkinnedMeshRenderer>().sharedMesh);
+               
+            }
+        }
+
+        meeloCatMeshesInOrderLenght = meeloCatMeshesInOrder.Count;
 
         StartCoroutine(ChangeMesh());
     }
@@ -51,6 +62,8 @@ public class SizeChanger : MonoBehaviour
     public void MeshChange()
     {
         currentSkinnedMeshRenderer.sharedMesh = meeloCatMeshesInOrder[meshArrayOrder];
+        print(meshArrayOrder);
+        print(meeloCatMeshesInOrder[meshArrayOrder]);
     }
 
     void StopMeshChanger()
@@ -74,6 +87,4 @@ public class SizeChanger : MonoBehaviour
             }
         }
     }
-
-
 }
