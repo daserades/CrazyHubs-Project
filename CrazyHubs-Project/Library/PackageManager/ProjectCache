@@ -5,15 +5,15 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637541059354714853
-    m_Hash: 4007186375
+      ticks: 637543428186668027
+    m_Hash: 1857255145
   m_LockFileStatus:
     m_FilePath: C:/Users/giren/Desktop/GitHub Repositories/CrazyHubs-Project/CrazyHubs-Project/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637541059456847693
+      ticks: 637543428569925994
     m_Hash: 38571225
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -533,6 +533,7 @@ m_PackageAssets:
         - 1.5.1
         - 1.5.3
         - 1.5.4
+        - 1.5.5
         - 2.0.0
         - 2.0.1-preview.1
         - 2.0.1
@@ -552,6 +553,7 @@ m_PackageAssets:
         - 2.1.1
         - 2.1.3
         - 2.1.4
+        - 2.1.5
         - 3.0.0-preview.1
         - 3.0.0-preview.3
         - 3.0.0-preview.4
@@ -567,11 +569,13 @@ m_PackageAssets:
         - 3.0.1
         - 3.0.3
         - 3.0.4
+        - 3.0.5
         compatible:
         - 3.0.1
         - 3.0.3
         - 3.0.4
-        verified: 3.0.4
+        - 3.0.5
+        verified: 3.0.5
       dependencies:
       - name: com.unity.ugui
         version: 1.0.0
