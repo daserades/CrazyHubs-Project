@@ -12,7 +12,7 @@ public class SizeChanger : MonoBehaviour
     public bool canLoseWeight = true;
 
     int meeloCatMeshesInOrderLenght = 0;
-    
+    [SerializeField]
     List<Mesh> meeloCatMeshesInOrder = new List<Mesh>();
 
     [SerializeField]
